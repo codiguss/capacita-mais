@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacita + | Guia Completo para Jovens</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#060B19',
+                            800: '#0A1128',
+                            700: '#111D3F',
+                        },
+                        neon: {
+                            DEFAULT: '#A3E635', // lime-400
+                            dark: '#84CC16',   // lime-500
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 15px 2px rgba(163, 230, 53, 0.4)',
+                        'neon-strong': '0 0 25px 5px rgba(163, 230, 53, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0A1128;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060B19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #84CC16;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #A3E635;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            border-color: #A3E635;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 20px rgba(163, 230, 53, 0.3), inset 0 0 15px rgba(163, 230, 53, 0.05);
+        }
+
+        .glass-card:hover .icon-container i {
+            transform: scale(1.1);
+            color: #ffffff;
+            text-shadow: 0 0 10px #A3E635;
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered delays for grid items */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Animated Background Gradients */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(163,230,53,0.1) 0%, rgba(10,17,40,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="relative antialiased">
+
+    <!-- Background decorative elements -->
+    <div class="bg-glow top-[-200px] left-[-200px]"></div>
+    <div class="bg-glow bottom-[20%] right-[-200px]"></div>
+
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-navy-900/80 border-b border-white/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-3xl font-extrabold tracking-tighter flex items-center gap-2">
+                <span class="text-white">Capacita</span><span class="text-neon">+</span>
+            </div>
+            <div class="hidden md:flex gap-6 font-medium text-sm text-gray-300">
+                <a href="#curriculo" class="hover:text-neon transition-colors">Currículo</a>
+                <a href="#entrevista" class="hover:text-neon transition-colors">Entrevista</a>
+            </div>
+            <a href="#curriculo" class="bg-neon-dark hover:bg-neon text-navy-900 font-bold py-2 px-5 rounded-full text-sm transition-all shadow-neon hover:shadow-neon-strong">
+                Começar
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex flex-col justify-center min-h-[80vh]">
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10 reveal active">
+            <div class="inline-block mb-4 px-4 py-1.5 rounded-full border border-neon/30 bg-neon/10 text-neon font-medium text-sm tracking-wide">
+                <i class="fa-solid fa-rocket mr-2"></i> O seu futuro começa agora
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+                Projeto <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon to-green-400">Capacita +</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 font-light">
+                Capacitação de empregabilidade aos jovens prodígios. Aprenda a estruturar seu currículo e a dominar o ambiente corporativo de forma estratégica.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#curriculo" class="bg-neon hover:bg-white text-navy-900 font-bold text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-neon hover:shadow-neon-strong transform hover:-translate-y-1 w-full sm:w-auto">
+                    Preparar para o Futuro <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Decorative wave/divider at the bottom of hero -->
+        <div class="absolute bottom-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-[50px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.93,121.31,192.21,111.31,237.24,103.95,280.9,85.6,321.39,56.44Z" class="fill-navy-900"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main class="bg-navy-900 relative">
+        
+        <section id="curriculo" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                
+                <div class="text-center mb-16 reveal">
+                    <div class="flex justify-center items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-neon/20 flex items-center justify-center text-neon text-2xl">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-bold">Como fazer um <span class="text-neon">currículo</span></h2>
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center gap-3 mt-6">
+                        <span class="px-4 py-2 rounded-full bg-navy-700 border border-white/5 text-sm font-medium text-gray-300"><i class="fa-solid fa-file-lines text-neon mr-2"></i>1 página</span>
+                        <span class="px-4 py-2 rounded-full bg-navy-700 border border-white/5 text-sm font-medium text-gray-300"><i class="fa-solid fa-camera-retro text-neon mr-2 text-red-400"></i>Sem foto desnecessária</span>
+                        <span class="px-4 py-2 rounded-full bg-navy-700 border border-white/5 text-sm font-medium text-gray-300"><i class="fa-solid fa-spell-check text-neon mr-2"></i>Sem erros de português</span>
+                    </div>
+                </div>
+
+                <!-- Grid de Currículo -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    
+                    <!-- Card 1 -->
+                    <div class="glass-card rounded-2xl p-8 reveal">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 mx-auto transition-all duration-300">
+                            <i class="fa-regular fa-address-card text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">Dados Pessoais</h3>
+                        <p class="text-gray-400 text-center text-sm leading-relaxed">
+                            Nome, telefone, e-mail e cidade. Mantenha atualizado e profissional. Não é necessário colocar CPF ou RG.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-card rounded-2xl p-8 reveal delay-100">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 mx-auto transition-all duration-300">
+                            <i class="fa-solid fa-bullseye text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">Objetivo</h3>
+                        <p class="text-gray-400 text-center text-sm leading-relaxed">
+                            Descreva seu objetivo de carreira de forma clara e objetiva. Evite frases clichês. Foco na vaga desejada!
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-card rounded-2xl p-8 reveal delay-200">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 mx-auto transition-all duration-300">
+                            <i class="fa-solid fa-briefcase text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">Experiência</h3>
+                        <p class="text-gray-400 text-center text-sm leading-relaxed">
+                            Liste cargos, empresas, períodos e suas conquistas principais. Se for o primeiro emprego, cite projetos escolares ou jovem aprendiz.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="glass-card rounded-2xl p-8 reveal">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 mx-auto transition-all duration-300">
+                            <i class="fa-solid fa-graduation-cap text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">Formação</h3>
+                        <p class="text-gray-400 text-center text-sm leading-relaxed">
+                            Curso, instituição, ano de conclusão ou previsto. Ensino médio em andamento ou completo é fundamental destacar.
+                        </p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="glass-card rounded-2xl p-8 reveal delay-100">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 mx-auto transition-all duration-300">
+                            <i class="fa-solid fa-cogs text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">Habilidades</h3>
+                        <p class="text-gray-400 text-center text-sm leading-relaxed">
+                            Destaque habilidades técnicas (informática, ferramentas) e comportamentais relevantes (comunicação, trabalho em equipe).
+                        </p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="glass-card rounded-2xl p-8 reveal delay-200">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 mx-auto transition-all duration-300">
+                            <i class="fa-regular fa-lightbulb text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">Dicas Extras</h3>
+                        <p class="text-gray-400 text-center text-sm leading-relaxed">
+                            Cursos extracurriculares, idiomas, trabalho voluntário. Seja específico e, acima de tudo, verdadeiro.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- Separator Line -->
+            <div class="max-w-5xl mx-auto mt-24 border-t border-dashed border-white/10 relative">
+                <div class="absolute left-1/2 -translate-x-1/2 -top-4 bg-navy-900 px-4 text-neon">
+                    <i class="fa-solid fa-angles-down animate-bounce text-xl"></i>
+                </div>
+            </div>
+        </section>
+
+        <section id="entrevista" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                
+                <div class="text-center mb-16 reveal">
+                    <div class="flex justify-center items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-neon/20 flex items-center justify-center text-neon text-2xl">
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-bold">Comportamento na <span class="text-neon">Entrevista</span></h2>
+                    </div>
+                    <p class="text-gray-400 max-w-2xl mx-auto mt-4">Chegou a hora do vamos ver. Como agir na frente do recrutador para garantir sua vaga.</p>
+                </div>
+
+                <!-- Grid de Entrevista -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    
+                    <!-- Card 1 -->
+                    <div class="glass-card rounded-2xl p-8 reveal">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 transition-all duration-300">
+                            <i class="fa-regular fa-clock text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Chegue 15 min antes</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Demonstre pontualidade e planejamento. Imprevistos acontecem! Sair cedo de casa evita estresse desnecessário.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-card rounded-2xl p-8 reveal delay-100">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 transition-all duration-300">
+                            <i class="fa-solid fa-user-tie text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Roupa adequada</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Vista-se de forma profissional e alinhada à cultura da empresa. Evite roupas muito informais, como bonés ou chinelos.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-card rounded-2xl p-8 reveal delay-200">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 transition-all duration-300">
+                            <i class="fa-regular fa-eye text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Postura e contato visual</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Mantenha postura ereta, confiante e olhe nos olhos do recrutador ao falar. Mostra segurança e engajamento.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="glass-card rounded-2xl p-8 reveal">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 transition-all duration-300">
+                            <i class="fa-regular fa-comments text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Fale com clareza</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Responda de forma clara, objetiva e com exemplos práticos. Evite gírias e pense antes de formular sua resposta.
+                        </p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="glass-card rounded-2xl p-8 reveal delay-100">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 transition-all duration-300">
+                            <i class="fa-regular fa-handshake text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Seja honesto</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Não exagere em suas qualificações. Honestidade gera confiança e credibilidade. Se não sabe algo, mostre vontade de aprender.
+                        </p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="glass-card rounded-2xl p-8 reveal delay-200">
+                        <div class="icon-container w-16 h-16 rounded-xl bg-navy-800 border border-neon/30 flex items-center justify-center mb-6 transition-all duration-300">
+                            <i class="fa-regular fa-heart text-3xl text-neon transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Agradeça no final</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Agradeça a oportunidade e reforce seu interesse na vaga. Uma boa impressão no fim pode ser o fator decisivo.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-navy-800 border-t border-white/10 pt-16 pb-8 relative overflow-hidden">
+        <div class="absolute bottom-0 w-full h-1 bg-gradient-to-r from-transparent via-neon to-transparent opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            
+            <div class="text-4xl font-extrabold tracking-tighter flex items-center justify-center gap-2 mb-6">
+                <span class="text-white">un</span><span class="text-neon">ex</span>
+            </div>
+            
+            <h4 class="text-xl font-bold mb-8">Projeto <span class="text-neon">Capacita +</span></h4>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 text-sm text-gray-400 mb-12">
+                <div class="glass-card p-4 rounded-xl text-left w-full md:w-auto">
+                    <p class="text-neon font-semibold mb-1"><i class="fa-solid fa-chalkboard-user mr-2"></i>Docente</p>
+                    <p>Lillyan Costa de Santana Melo</p>
+                </div>
+                
+                <div class="glass-card p-4 rounded-xl text-left w-full md:w-auto">
+                    <p class="text-neon font-semibold mb-1"><i class="fa-solid fa-users-viewfinder mr-2"></i>Discentes Desenvolvedores</p>
+                    <p>Eduarda, Gustavo, Isabele,<br>Maiane, Paulo e Samira</p>
+                </div>
+            </div>
+            
+            <div class="text-gray-500 text-xs border-t border-white/10 pt-8">
+                &copy; 2026 Projeto Capacita +. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar background effect on scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-lg', 'shadow-neon/5');
+                } else {
+                    navbar.classList.remove('shadow-lg', 'shadow-neon/5');
+                }
+            });
+
+            // Scroll Reveal Animation (Intersection Observer)
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: Stop observing once revealed
+                        // observer.unobserve(entry.target); 
+                    }
+                });
+            };
+
+            const revealOptions = {
+                threshold: 0.15, // Trigger when 15% of element is visible
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
